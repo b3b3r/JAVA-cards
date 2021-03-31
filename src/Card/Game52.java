@@ -2,6 +2,9 @@ package Card;
 
 import java.util.ArrayList;
 
+import Enum.Figure;
+import Enum.Suit;
+
 public final class Game52 {
   private final static Game52 instance = new Game52();
   public final static Game52 getInstance() { return instance; }

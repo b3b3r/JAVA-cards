@@ -1,5 +1,8 @@
 package Card;
 
+import Enum.Figure;
+import Enum.Suit;
+
 public class Card32 extends ClassicCard implements ICarte {
   private Figure figure;
   private Suit suit;
