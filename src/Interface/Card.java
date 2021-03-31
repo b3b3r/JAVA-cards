@@ -1,6 +1,6 @@
-package Card;
+package Interface;
 
-public interface ICarte {
+public interface Card {
   public String getLogo();
   public void setIsVisible();
   public Boolean getIsVisible();

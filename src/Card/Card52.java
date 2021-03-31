@@ -2,16 +2,14 @@ package Card;
 
 import Enum.Figure;
 import Enum.Suit;
+import Interface.Card;
 
-public class Card52 extends ClassicCard implements ICarte {
-  private Figure figure;
-  private Suit suit;
+public class Card52 extends ClassicCard implements Card {
   private Boolean isVisible;
   private String logo;
 
   public Card52(Figure figure, Suit suit) {
-    this.figure = figure;
-    this.suit = suit;
+    super(figure, suit);
     this.logo = "<3";
     this.isVisible = false;
   }
@@ -31,17 +29,4 @@ public class Card52 extends ClassicCard implements ICarte {
     this.isVisible = !this.isVisible;
   }
 
-  @Override
-  public Figure getFigure(){
-    return this.figure;
-  }
-
-  @Override
-  public Suit getSuit(){
-    return this.suit;
-  }
-
-  public String getCard(){
-    return this.figure.toString() + " of " + this.suit.toString();
-  }
 }
