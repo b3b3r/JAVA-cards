@@ -2,32 +2,27 @@ package Card;
 
 import Enum.Figure;
 import Enum.Suit;
-import Interface.Card;
 
-public class Card32 extends ClassicCard implements Card {
-  private Boolean isVisible;
-  private String logo;
-
+public class Card32 extends ClassicCard {
   public Card32(Figure figure, Suit suit) {
-    super(figure, suit);
-    this.logo = "<3";
-    this.isVisible = false;
+    super(figure, suit, "<3");
   }
+  public static Boolean is32(Figure figure){
+    Boolean isValid = true;
 
-  @Override
-  public String getLogo(){
-    return this.logo;
-  }
-  
-  @Override
-  public Boolean getIsVisible(){
-    return this.isVisible;
-  }
+    switch (figure) {
+      case TWO :
+      case THREE:
+      case FOUR:
+      case FIVE:
+      case SIX:
+        isValid = false;
+        break;
+      default:
+        isValid = true;
+        break;
+    }
 
-  @Override
-  public void setIsVisible(){
-    this.isVisible = !this.isVisible;
+    return isValid;
   }
-
 }
-

@@ -19,7 +19,7 @@ public final class Game32 {
     ArrayList<Card32> cards = new ArrayList<>();
     for (Suit suit : Suit.values()) {
       for (Figure figure : Figure.values()) {
-        if (figure != Figure.TWO && figure != Figure.THREE && figure != Figure.FOUR && figure != Figure.FIVE && figure != Figure.SIX) {
+        if (Card32.is32(figure)) {
         Card32 card = new Card32(figure, suit);
         cards.add(card);
         }

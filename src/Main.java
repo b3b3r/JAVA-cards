@@ -22,6 +22,6 @@ public class Main {
     Game32 game32 = Game32.getInstance();
     // System.out.println(game32.getSize());
     // System.out.println(game32.getCards());
-    System.out.println(game32.getCard(2).getCard());
+    //System.out.println(game32.getCards());
   }
 }
