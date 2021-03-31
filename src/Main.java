@@ -1,4 +1,5 @@
-package Card;
+import Game.Game32;
+import Game.Game52;
 
 // Vous pourrez regarder également deux patrons de conceptions répandus (par exemple sur wikipedia) :
 

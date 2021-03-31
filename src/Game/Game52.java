@@ -1,7 +1,8 @@
-package Card;
+package Game;
 
 import java.util.ArrayList;
 
+import Card.Card52;
 import Enum.Figure;
 import Enum.Suit;
 
