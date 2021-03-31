@@ -28,8 +28,12 @@ public final class Game32 {
     return cards;
   }
   
-  public ArrayList<Card32> getCards() {
-    return this.cards;
+  public ArrayList<String> getCards() {
+    ArrayList<String> cards = new ArrayList<>();
+    for (Card32 card : this.cards) {
+      cards.add(card.getCard());
+    }
+    return cards;
   }
 
   public Card32 getCard(int index){

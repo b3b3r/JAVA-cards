@@ -1,3 +1,4 @@
+import Card.Card52;
 import Game.Game32;
 import Game.Game52;
 
@@ -13,15 +14,14 @@ import Game.Game52;
 public class Main {
   public static void main(String[] args) throws Exception {
     Game52 game = Game52.getInstance();  
-    // for (Card52 card : game.getCards()) {
-    //   System.out.println(card.getCard());
-    // }
-    System.out.println(game.getSize());
+    // System.out.println(game.getSize());
     // Card cardOne = game.getCard(0);
     // cardOne.setIsVisible();
     // System.out.println(cardOne.getIsVisible());
 
     Game32 game32 = Game32.getInstance();
-    System.out.println(game32.getSize());
+    // System.out.println(game32.getSize());
+    // System.out.println(game32.getCards());
+    System.out.println(game32.getCard(2).getCard());
   }
 }

@@ -18,6 +18,6 @@ public abstract class ClassicCard {
     return this.suit;
   }
   public String getCard(){
-    return this.figure.toString() + " of " + this.suit.toString();
+    return this.figure.getLabel() + this.suit.getLabel();
   }
 }
