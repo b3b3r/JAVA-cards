@@ -2,9 +2,9 @@ package Card;
 
 import Enum.Figure;
 import Enum.Suit;
-import Interface.Card;
+import Interface.ICard;
 
-public abstract class ClassicCard implements Card {
+public abstract class ClassicCard implements ICard {
   private Boolean isVisible;
   private String logo;
   private Figure figure;

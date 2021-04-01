@@ -1,6 +1,8 @@
-import Card.Card52;
-import Game.Game32;
-import Game.Game52;
+import Card.Card32;
+import Enum.Figure;
+import Enum.Suit;
+import Game.Game;
+import Interface.ICard;
 
 // Vous pourrez regarder également deux patrons de conceptions répandus (par exemple sur wikipedia) :
 
@@ -13,13 +15,27 @@ import Game.Game52;
 // 4/ Créer une classe Paquet32 et une classe Paquet52. Pour l'exercice, ces deux classes respectent le singleton.
 public class Main {
   public static void main(String[] args) throws Exception {
-    Game52 game = Game52.getInstance();  
+  
+    Game<ICard> game32 = new Game<>();
+    Game<ICard> game52 = new Game<>();
+    for (Suit suit : Suit.values()) {
+      for (Figure figure : Figure.values()) {
+        if (Card32.is32(figure)) {
+        Card32 card = new Card32(figure, suit);
+        game32.addCard(card);
+        }
+      } 
+    }
+
+    System.out.println(game32.getCards());
+    
+    //Game52 game = Game52.getInstance();
     // System.out.println(game.getSize());
     // Card cardOne = game.getCard(0);
     // cardOne.setIsVisible();
     // System.out.println(cardOne.getIsVisible());
 
-    Game32 game32 = Game32.getInstance();
+    //Game32 game32 = Game32.getInstance();
     // System.out.println(game32.getSize());
     // System.out.println(game32.getCards());
     //System.out.println(game32.getCards());
