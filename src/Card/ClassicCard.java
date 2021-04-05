@@ -2,39 +2,19 @@ package Card;
 
 import Enum.Figure;
 import Enum.Suit;
-import Interface.ICard;
 
-public abstract class ClassicCard implements ICard {
-  private Boolean isVisible;
-  private String logo;
-  private Figure figure;
-  private Suit suit;
+public abstract class ClassicCard extends Card {
+  private final Figure figure;
+  private final Suit suit;
   
   public ClassicCard(Figure figure, Suit suit, String logo){
+    super(logo);
     this.figure = figure;
     this.suit= suit;
-    this.logo = logo;
-    this.isVisible = false;
-  }
-  
-  @Override
-  public String getCard(){
-    return this.figure.getLabel() + this.suit.getLabel();
-  }
-  
-  @Override
-  public String getLogo(){
-    return this.logo;
-  }
-  
-  @Override
-  public Boolean getIsVisible(){
-    return this.isVisible;
   }
 
-  @Override
-  public void setIsVisible(){
-    this.isVisible = !this.isVisible;
+  protected String getFace(){
+    return this.figure.getLabel() + this.suit.getLabel();
   }
 
   public Figure getFigure(){
