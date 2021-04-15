@@ -4,30 +4,27 @@ import java.util.ArrayList;
 
 import Interface.ICard;
 
-public class Game<T extends ICard> {
-  private ArrayList<T> cards;
+public abstract class Game<T extends ICard> {
+  protected ArrayList<T> cards = new ArrayList<>();
   
   public Game(){
-    this.cards =  new ArrayList<>();
+    this.generateGame();
   }
 
   public void addCard(T card){
     this.cards.add(card);
   }
 
-  public T get(int i) {
-    return this.cards.get(i);
-  }
-
-  public ArrayList<String> getCards() {
-    ArrayList<String> cards = new ArrayList<>();
-    for (T card : this.cards) {
-      cards.add(card.getCard());
-    }
-    return cards;
+  public T getCard(int index){
+    return this.cards.get(index);
   }
 
   public int getSize(){
     return this.cards.size();
   }
+  
+  protected abstract void generateGame();
+  
+  public abstract ArrayList<String> getCards();
+
 }

@@ -1,8 +1,6 @@
 import Card.Card32;
-import Enum.Figure;
-import Enum.Suit;
-import Game.Game;
-import Interface.ICard;
+import Game.Game32;
+// import Game.Game52;
 
 // Vous pourrez regarder également deux patrons de conceptions répandus (par exemple sur wikipedia) :
 
@@ -16,18 +14,15 @@ import Interface.ICard;
 public class Main {
   public static void main(String[] args) throws Exception {
   
-    Game<ICard> game32 = new Game<>();
-    Game<ICard> game52 = new Game<>();
-    for (Suit suit : Suit.values()) {
-      for (Figure figure : Figure.values()) {
-        if (Card32.is32(figure)) {
-        Card32 card = new Card32(figure, suit);
-        game32.addCard(card);
-        }
-      } 
-    }
-
-    System.out.println(game32.getCards());
+    Game32 game32 = Game32.getInstance();
+    // System.out.println(game32.getCards());
+    
+    Card32 card1 = game32.getCard(1);
+    System.out.println(card1.getCard());
+    card1.setIsVisible();
+    System.out.println(card1.getCard());
+    // Game52 game52 = Game52.getInstance();
+    // System.out.println(game52.getCards());
     
     //Game52 game = Game52.getInstance();
     // System.out.println(game.getSize());

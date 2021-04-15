@@ -6,35 +6,27 @@ import Card.Card52;
 import Enum.Figure;
 import Enum.Suit;
 
-public final class Game52 {
+public final class Game52 extends Game<Card52>{
   private final static Game52 instance = new Game52();
   public final static Game52 getInstance() { return instance; }
-  private ArrayList<Card52> cards;
   
   private Game52(){
-    this.cards = generateGame();
+    super();
   }
 
-  private ArrayList<Card52> generateGame(){
-    ArrayList<Card52> cards = new ArrayList<>();
+  protected void generateGame(){
     for (Suit suit : Suit.values()) {
       for (Figure figure : Figure.values()) {
         Card52 card = new Card52(figure, suit);
-        cards.add(card);
+        super.addCard(card);
       } 
     }
+  }
+  public ArrayList<String> getCards() {
+    ArrayList<String> cards = new ArrayList<String>();
+    for (Card52 card : super.cards) {
+      cards.add(card.getCard());
+    }
     return cards;
-  }
-  
-  public ArrayList<Card52> getCards() {
-    return this.cards;
-  }
-
-  public Card52 getCard(int index){
-    return this.cards.get(index);
-  }
-
-  public int getSize(){
-    return this.cards.size();
   }
 }
